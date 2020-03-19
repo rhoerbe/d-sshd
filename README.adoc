@@ -1,2 +1,11 @@
 # Kerberized SSH Server
 
+## configuration
+
+create server principal (e.g. host/ssh-test.example.at@EXAMPLE:AT)
+create keytab from server principal and store it in /etc/rkb5.keytab in ssh-test container
+
+## test
+
+* enable GSSAPIAuthentication on client (like /etc/ssh/ssh_config)
+* create local account on ssh server and related principal in KDC

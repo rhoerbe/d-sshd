@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-NAME='sshd2022'
-NETOPT='--net=host'
-RUNOPT='-it --rm --net=host'
+NAME='ssh-test.example.at'
+NETOPT='-p 2022:2022'
+RUNOPT='-it --rm'
+#RUNOPT='-d'
 SSDH_OPTS='-dd'
-VOLOPT='-v sshd2022.etc_krf5.conf:/etc/krb5.conf:Z -v sshd2022.etc_ssh:/etc/ssh:Z -v sshd2022.root:/root:Z'
+VOLOPT='-v /etc/krb5.conf:/etc/krb5.conf:Z -v /opt/docker/d-sshd-data/ssh-test.keytab:/etc/krb5.keytab:ro -v sshd2022.etc_ssh:/etc/ssh:Z -v sshd2022.root:/root:Z'
 
 cmd="docker run $RUNOPT --name $NAME --hostname $NAME -e SSHD_OPTS $NETOPT $VOLOPT r2h2/sshd $1"
 echo $cmd

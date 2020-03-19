@@ -29,9 +29,9 @@ usage() {
 
 
 create_sshd_keys() {
-    [ -e /opt/etc/ssh/ssh_host_rsa_key ] || ssh-keygen -q -N '' -t rsa -f /opt/etc/ssh/ssh_host_rsa_key
-    [ -e /opt/etc/ssh/ssh_host_ecdsa_key ] || ssh-keygen -q -N '' -t ecdsa -f /opt/etc/ssh/ssh_host_ecdsa_key
-    [ -e /opt/etc/ssh/ssh_host_ed25519_key ] || ssh-keygen -q -N '' -t ed25519 -f /opt/etc/ssh/ssh_host_ed25519_key
+    [ -e /opt/etc/ssh/ssh_host_rsa_key ] || ssh-keygen -q -N '' -t rsa -f /etc/ssh/ssh_host_rsa_key
+    [ -e /opt/etc/ssh/ssh_host_ecdsa_key ] || ssh-keygen -q -N '' -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
+    [ -e /opt/etc/ssh/ssh_host_ed25519_key ] || ssh-keygen -q -N '' -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
 }
 
 
